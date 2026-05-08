@@ -1,0 +1,119 @@
+* {
+    font-family: "Monospace", "Sans";
+    font-size: 13px;
+    font-weight: bold;
+    min-height: 0;
+}
+
+window#waybar {
+    background: rgba(15, 15, 20, 0.95);
+    border: 2px solid #ff4c4c;
+    border-radius: 12px;
+    color: #44ffff;
+    min-height: 32px;
+}
+
+/* Workspaces - Cyberpunk glow */
+#workspaces {
+    margin: 0 8px;
+}
+
+#workspaces button {
+    padding: 0 12px;
+    color: #666666;
+    background: transparent;
+    border: 2px solid transparent;
+    border-radius: 6px;
+    transition: all 0.3s ease;
+}
+
+#workspaces button.active {
+    color: #ff4c4c;
+    background: rgba(255, 76, 76, 0.2);
+    border: 2px solid #ff4c4c;
+    box-shadow: 0 0 10px rgba(255, 76, 76, 0.5);
+}
+
+#workspaces button:hover {
+    color: #44ffff;
+    background: rgba(68, 255, 255, 0.15);
+    border: 2px solid #44ffff;
+}
+
+/* Window title - Cyan glow */
+#window {
+    color: #44ffff;
+    margin: 0 12px;
+    text-shadow: 0 0 8px rgba(68, 255, 255, 0.6);
+}
+
+/* Clock - Red cyberpunk */
+#clock {
+    color: #ff4c4c;
+    background: rgba(255, 76, 76, 0.15);
+    padding: 0 16px;
+    border: 2px solid #ff4c4c;
+    border-radius: 8px;
+    font-size: 14px;
+    text-shadow: 0 0 10px rgba(255, 76, 76, 0.8);
+    box-shadow: inset 0 0 8px rgba(255, 76, 76, 0.3);
+}
+
+/* Right modules container */
+#network, #cpu, #memory {
+    padding: 0 14px;
+    margin: 0 4px;
+    border-radius: 8px;
+    border: 2px solid;
+    transition: all 0.3s ease;
+}
+
+#network {
+    color: #44ffff;
+    background: rgba(68, 255, 255, 0.1);
+    border-color: #44ffff;
+}
+
+#network.disconnected {
+    color: #ff4c4c;
+    border-color: #ff4c4c;
+}
+
+#cpu {
+    color: #ff6b9d;
+    background: rgba(255, 107, 157, 0.1);
+    border-color: #ff6b9d;
+}
+
+#memory {
+    color: #ffaa00;
+    background: rgba(255, 170, 0, 0.1);
+    border-color: #ffaa00;
+}
+
+/* Hover effects with glow */
+#network:hover {
+    box-shadow: 0 0 12px rgba(68, 255, 255, 0.6);
+}
+
+#cpu:hover {
+    box-shadow: 0 0 12px rgba(255, 107, 157, 0.6);
+}
+
+#memory:hover {
+    box-shadow: 0 0 12px rgba(255, 170, 0, 0.6);
+}
+
+/* System tray */
+#tray {
+    background: transparent;
+    margin: 0 4px;
+}
+
+#tray > .passive {
+    -gtk-icon-effect: dim;
+}
+
+#tray > .needs-attention {
+    -gtk-icon-effect: highlight;
+}

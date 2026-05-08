@@ -83,11 +83,17 @@ source $ZSH/oh-my-zsh.sh
 # export LANG=en_US.UTF-8
 
 # Preferred editor for local and remote sessions
-# if [[ -n $SSH_CONNECTION ]]; then
-#   export EDITOR='vim'
-# else
-#   export EDITOR='nvim'
-# fi
+if [[ -n $SSH_CONNECTION ]]; then
+   export EDITOR='vim'
+ else
+   export EDITOR='nvim'
+ fi
+
+# Auto-start SSH agent and load key
+if [ -z "$SSH_AUTH_SOCK" ]; then
+  eval "$(ssh-agent -s)" > /dev/null 2>&1
+  ssh-add ~/.ssh/nexhomeGit > /dev/null 2>&1
+fi
 
 # Compilation flags
 # export ARCHFLAGS="-arch $(uname -m)"

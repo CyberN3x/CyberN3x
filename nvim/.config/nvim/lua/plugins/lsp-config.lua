@@ -13,7 +13,8 @@ return {
                "lua_ls",
                "clangd",
                "taplo",
-               "rust_analyzer"
+               "rust_analyzer",
+               "gopls"
             }
          })
       end
@@ -22,19 +23,39 @@ return {
       "neovim/nvim-lspconfig",
       config = function()
          local capabilities = require('cmp_nvim_lsp').default_capabilities()
-         local lspconfig = require("lspconfig")
-         lspconfig.lua_ls.setup({
-         capabilities = capabilities
-         })
-         lspconfig.clangd.setup({
-         capabilities = capabilities
-         })
-         lspconfig.taplo.setup({
-         capabilities = capabilities
-         })
-         lspconfig.rust_analyzer.setup({
-         capabilities = capabilities
-         })
+         
+         vim.lsp.config.lua_ls = {
+            capabilities = capabilities,
+         }
+         vim.lsp.config.clangd = {
+            capabilities = capabilities,
+         }
+         vim.lsp.config.taplo = {
+            capabilities = capabilities,
+         }
+         vim.lsp.config.rust_analyzer = {
+            capabilities = capabilities,
+         }
+         vim.lsp.config.gopls = {
+            capabilities = capabilities,
+            settings = {
+               gopls = {
+                  gofumpt = true,
+                  usePlaceholders = true,
+                  completeUnimported = true,
+                  staticcheck = true,
+                  analyses = {
+                     unusedparams = true,
+                     shadow = true,
+                  }
+               }
+            }
+         }
+         vim.lsp.enable('lua_ls')
+         vim.lsp.enable('clangd')
+         vim.lsp.enable('taplo')
+         vim.lsp.enable('rust_analyzer')
+         vim.lsp.enable('gopls')
 
          vim.keymap.set('n', 'K', vim.lsp.buf.hover, {})
          vim.keymap.set('n', 'gd', vim.lsp.buf.definition, {})
