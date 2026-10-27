@@ -118,3 +118,6 @@ export PATH="$HOME/.local/bin:$PATH"
 export PATH="$PATH:/home/nex/.lmstudio/bin"
 # End of LM Studio CLI section
 
+
+# OpenHarness
+export PATH="/home/nex/.local/bin:$PATH"

@@ -1,7 +1,7 @@
 {
   "layer": "top",
   "position": "top",
-  "height": 32,
+  "height": 30,
   "spacing": 10,
   "margin-top": 8,
   "margin-left": 12,
@@ -64,6 +64,7 @@
     "interval": 2,
     "format-wifi": "NET {bandwidthDownBytes}",
     "format-ethernet": "ETH {bandwidthDownBytes}",
+    "format-wifi": " {essid} ({signalStrength}%)",
     "format-disconnected": "OFFLINE",
     "tooltip-format": "{ifname}: {ipaddr}\nUp: {bandwidthUpBytes}\nDown: {bandwidthDownBytes}"
   },
@@ -89,7 +90,7 @@
   },
   
   "tray": {
-    "icon-size": 18,
+    "icon-size": 16,
     "spacing": 8
   }
 }
